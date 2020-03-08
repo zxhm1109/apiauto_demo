@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>http接口自动化测试报告</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .hidden-detail,.hidden-tr{
+            display:none;
+        }
+    </style>
+    <script type="text/javascript">
+        //显示悬浮层
+        function showInform() {
+            document.getElementById("inform").style.display = 'block';
+            // document.getElementById("inform").css("display","block");
+        }
+
+        //隐藏悬浮层
+        function hiddenInform(event) {
+            var informDiv = document.getElementById('inform');
+            var x = event.clientX;
+            var y = event.clientY;
+            var divx1 = informDiv.offsetLeft;
+            var divy1 = informDiv.offsetTop;
+            var divx2 = informDiv.offsetLeft + informDiv.offsetWidth;
+            var divy2 = informDiv.offsetTop + informDiv.offsetHeight;
+            if (x < divx1 || x > divx2 || y < divy1 || y > divy2) {
+                document.getElementById('inform').style.display = 'none';
+            }
+
+        }
+
+
+    </script>
+    <style type="text/css">
+        body {
+            position: relative;
+        }
+
+        #inform {
+            position: absolute;
+            max-height: 250px; /* 设置最大高度，当高度达到此值时出现滚动条 */
+            z-index: 10;
+            background-color: #E0E5E5;
+            overflow: auto; /* 自动添加滚动条 */
+            box-shadow: 0px 0px 10px #000; /* 外阴影 */
+            display: none; /* 默认隐藏 */
+        }
+
+        #informTable {
+            table-layout: fixed; /* 用于实现表格td自动换行的部分代码*/
+            width: 325px;
+        }
+
+        #informTable tr td {
+            width: 325px;
+            height: 30px;
+            font-size: 16px;
+            font-family: Georgia;
+            color: #555555;
+            word-wrap: break-word; /*自动换行*/
+            padding: 0 0 0 0;
+        }
+
+        #informTable tr td:hover {
+            background-color: #D9D9D9;
+        }
+
+        #inform hr {
+            border: 1;
+            width: 325px;
+            margin-bottom: 0px;
+        }
+
+    </style>
+</head>
+<body>
+	
+<div  class='col-md-4 col-md-offset-4' style='margin-left:3%;'>
+<h1>接口测试的结果</h1>
+    <table  class="table table-hover table-condensed">
+            <tbody>
+                <tr>
+		<td><strong>开始时间:</strong> 2020-01-03 17:27:43.479601</td>
+		</tr>
+		<td><strong>结束时间:</strong> 2020-01-03 17:27:45.259097</td></tr>
+		<td><strong>耗时:</strong> 0:00:01.779496</td></tr>
+		<td><strong>结果:</strong>
+			<span >用例总数: <strong >149</strong>
+			通过: <strong >12</strong>
+			失败: <strong >0</strong>
+			未执行: <strong >137</strong></span></td>                  
+			   </tr> 
+			   </tbody></table>
+			   </div> <div class="row " style="margin:60px">
+        <table class="table table-hover table-condensed table-bordered" style="word-wrap:break-word; word-break:break-all;  margin-top: 7px;"
+        border='2'cellspacing='1' cellpadding='1' width="100%" align="center">
+		<tr >
+            <td width="5%"><strong>用例ID</strong></td>
+            <td width="10%"><strong>名称</strong></td>
+            <td width="10%"><strong>模块</strong></td>
+            <td width="30%" ><strong>入参</strong></td>
+            <td width="20%"><strong>接口</strong></td>
+            <td width="10%"><strong>期望</strong></td>
+            <td width="5%"><strong>实际</strong></td>
+            <td width="5%"><strong>结果</strong></td>
+        </tr>
+     
+        <tr class="case-tr success">
+            <td>TEST_1619</td>
+            <td>卡密启用</td>
+            <td>AdminPhyExamController(h5)</td>
+            <td>{"cardNo":"1178114867290574853","status":"10"}</td>
+            <td>/physicalexam/PC/modifyCardInvalid</td>
+            <td>message=卡密状态更改成功！</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    卡密状态更改成功！
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1620</td>
+            <td>卡密禁用</td>
+            <td>AdminPhyExamController(h5)</td>
+            <td>{"cardNo":"1178114867290574853","status":"-1"}</td>
+            <td>/physicalexam/PC/modifyCardInvalid</td>
+            <td>message=卡密状态更改成功！</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    卡密状态更改成功！
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1621</td>
+            <td>重置卡密</td>
+            <td>AdminPhyExamController(h5)</td>
+            <td>{"cardNo":"1178114867290574853","phone":"13120806671"}</td>
+            <td>/physicalexam/PC/restCardSecret</td>
+            <td>message=重置密码成功！</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    重置密码成功！
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1623</td>
+            <td>查询physicalexam列表</td>
+            <td>AdminPhyExamController(h5)</td>
+            <td></td>
+            <td>/physicalexam/physicalexams</td>
+            <td>message: "SUCCESS"</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    SUCCESS
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1656</td>
+            <td>确认预约</td>
+            <td>PhysicalExamController(app)</td>
+            <td>{"regDate":"2020-01-08","packageName":"4.8.0测试套餐家属男","cardNumber":"1153512956309934101","userId":1503576401921792,"additionPackList":[],"differencePrice":0,"name":"1","idNumber":"1","hospId":"1106739729466662912","hospAddress":"上海市浦东新区张杨路560号中融恒瑞大厦6楼西区","hospName":"爱康国宾上海浦东八佰伴分院VIP部","packageCode":"1186197333472186368","contactTel":"13120806671","supplierId":"4"}</td>
+            <td>/physicalexam/comfirmReservation</td>
+            <td>message=预约成功</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    预约成功
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1651</td>
+            <td>取消预约</td>
+            <td>PhysicalExamController(app)</td>
+            <td>{"recordId":"#TEST_1656"}</td>
+            <td>/physicalexam/cancelOrder</td>
+            <td>message=取消完成</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    取消完成
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1671</td>
+            <td>预约详情</td>
+            <td>PhysicalExamController(app)</td>
+            <td>recordId=1211484874364047360</td>
+            <td>/physicalexam/findExamRecordInfo</td>
+            <td>message=SUCCESS</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    SUCCESS
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1684</td>
+            <td>查询固定分院体检排期</td>
+            <td>PhysicalExamController(app)</td>
+            <td>packageCode=1186197333472186368&hospId=1088342297284452352</td>
+            <td>/physicalexam/find_schedule_by_hosp_id</td>
+            <td>message=SUCCESS</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    SUCCESS
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1714</td>
+            <td>选择套餐服务码查询具体的服务列表</td>
+            <td>PhysicalExamController(app)</td>
+            <td>packageId=1153512956651638793&idNumber=1&needpay=1&brandCode=003</td>
+            <td>/physicalexam/packageCode</td>
+            <td>message=SUCCESS</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    SUCCESS
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1726</td>
+            <td>套餐检查项目详情</td>
+            <td>PhysicalRemoteController</td>
+            <td>instId=1086175128668872704&packageCode=1108327116470624256</td>
+            <td>/physicalexam/phy_remote/getPhysCheckItemDTO</td>
+            <td>message=执行成功&code=1</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    执行成功
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1752</td>
+            <td>查询结构化的体检权益数据</td>
+            <td>PhysicalExamController(app)</td>
+            <td>userId=1536853597763009</td>
+            <td>/physicalexam/structured/medicalService</td>
+            <td>message=SUCCESS</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    SUCCESS
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    
+        <tr class="case-tr success">
+            <td>TEST_1753</td>
+            <td>支持的城市列表</td>
+            <td>PhysicalExamController(app)</td>
+            <td>packageCode=1186197333472186368&userId=1503576401921792&brandCode=003</td>
+            <td>/physicalexam/supportCity</td>
+            <td>message=SUCCESS</td>
+             <td>
+                <a id="btn" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform()">
+                    SUCCESS
+                </a>
+                <div id="inform" onMouseOver="javascript:showInform();" onMouseOut="hiddenInform(event)">
+                    <a>11</a>
+                </div>
+            </td>
+            
+            <td bgcolor="green">pass</td>
+        </tr>
+    </div></div></table><script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+</script>
+</body></html>
